@@ -10,12 +10,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+from dotenv import load_dotenv
 from pathlib import Path
 
-
-import os 
+load_dotenv()
+import os
 import environ
-
 env = environ.Env()
 environ.Env.read_env()
 
