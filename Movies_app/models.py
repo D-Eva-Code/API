@@ -5,7 +5,8 @@ class Movie(models.Model):
     name = models.CharField(max_length=200)  
     duration = models.FloatField()
     rating = models.FloatField() 
-    typ = models.CharField(max_length=200, default ="Action")     
+    typ = models.CharField(max_length=200, default ="Action") 
+    image = models.ImageField(upload_to='images', default='/noimg.jpg/')    
     
     def save(self, *args, **kwargs):
         if self.typ:

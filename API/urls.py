@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from Movies_app.views import Movieviewset,Actionviewset,Comedyviewset,Scifiviewset
+from django.conf.urls.static import static
+from django.conf import settings
 
 router= routers.SimpleRouter()
 router.register('movies', Movieviewset, basename='movie')
@@ -29,3 +31,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
 ]
+urlpatterns += [
+    # ... the rest of your URLconf goes here ...
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
