@@ -7,3 +7,11 @@ from .models import Movie
 class Movieviewset(viewsets.ModelViewSet):
     queryset = Movie.objects.all()
     serializer_class = Movieserializers
+    
+class Actionviewset(viewsets.ModelViewSet):
+    queryset = Movie.objects.filter(typ = "Action")
+    serializer_class = Movieserializers
+    
+class Comedyviewset(viewsets.ModelViewSet):
+    queryset = Movie.objects.filter(typ = "Comedy")
+    serializer_class = Movieserializers
