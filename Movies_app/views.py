@@ -15,3 +15,7 @@ class Actionviewset(viewsets.ModelViewSet):
 class Comedyviewset(viewsets.ModelViewSet):
     queryset = Movie.objects.filter(typ = "Comedy")
     serializer_class = Movieserializers
+    
+class Scifiviewset(viewsets.ModelViewSet):
+    queryset = Movie.objects.filter(typ = "Scifi")
+    serializer_class = Movieserializers
